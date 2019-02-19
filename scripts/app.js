@@ -35,7 +35,7 @@ const app = {
     },
     bgImg: () => {
         let a = app.selectAll('[bg-img]')
-        for (i = 0; i < a.length; i++) {
+        for (let i = 0; i < a.length; i++) {
             let el = a[i],
                 bgimg = el.getAttribute('bg-img'),
                 pos = el.getAttribute('bg-pos'),
@@ -62,10 +62,6 @@ const app = {
             });
         })
     },
-    fixedMain: () => {
-        let headerHeight = app.select('header').offsetHeight
-        app.select('main').style.paddingTop = headerHeight + 'px'
-    },
     aos: () => {
         AOS.init({
             duration: 1200,
@@ -85,7 +81,6 @@ const app = {
 app.ready(function() {
     app.bgImg()
     app.backToTop()
-    app.fixedMain()
     app.aos()
     app.ie()
 })
