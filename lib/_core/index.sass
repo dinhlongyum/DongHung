@@ -5,9 +5,15 @@ html, body
 	font-family: 'Bai Jamjuree', sans-serif
 	font-weight: 400
 	color: #333333
-	height: 500vh
+	overflow: hidden
+	height: 100%
 	+media-breakpoint-up(xl)
-		+fz(18px)
+		+fz(20px)
+	.scroll-Animate
+		height: 100%
+*::selection
+	background: #abcfc1
+	color: #fff
 img
 	max-width: 100%
 p, h1, h2, h3, h4, h5, ul, figure

@@ -1,4 +1,9 @@
 .grid
+    &.onScroll
+        .lineX
+            &:after
+                top: 9rem
+                transition-delay: .2s
     .lineX
         &:after
             content: ''
@@ -7,6 +12,7 @@
             height: 1px
             +pos(fixed,11.25rem null null 0)
             background: hsla(0,0%,100%,.5)
+            +tran(.5s)
         &:before
             content: ''
             width: 100%
@@ -41,7 +47,7 @@
     +media-breakpoint-down(md)
         .lineX
             &:after
-                top: r(144px)
+                top: 8.75rem
         .lineY
             &:after
                 right: 6.5rem
@@ -50,3 +56,33 @@
     +media-breakpoint-down(sm)
         .lineCenter
             display: none
+.find-shop
+    +pos(fixed, 50% 2.5rem null null)
+    transform: translateY(-50%)
+    z-index: 32
+    display: none
+    +pad(null 0 .1875rem)
+    a
+        writing-mode: vertical-lr
+        letter-spacing: .15em
+        +fz(.875rem)
+        text-transform: uppercase
+        color: #ffffff
+        overflow: hidden
+        text-decoration: none
+        position: relative
+        &:before
+            content: ''
+            height: 100%
+            z-index: -1
+            width: 50%
+            +pos(abs, null null 100% 0)
+            +tran(.5s)
+            background: #edd2bb
+        &:hover
+            &:before
+                bottom: 0
+    +media-breakpoint-up(sm)
+        display: block
+    +media-breakpoint-up(lg)
+        right: 3.75rem

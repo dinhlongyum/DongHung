@@ -1,18 +1,92 @@
-.top-wrapper
-    height: 36px
-    background: #f68121
-    margin-bottom: 0
-    +flex-center()
+
+.dh-header
     +pos(abs, 0 null null 0)
     width: 100%
-    +pad(null 1rem)
-    z-index: 33
-    p
-        text-align: center
-        +fz(.5rem)
-        letter-spacing: .1rem
-        +fw(600)
-        color: #fff
-    +media-breakpoint-up(lg)
+    z-index: 55
+    &.onScroll
+        .header-wrapper
+            +pos(fixed, 0 null null 0)
+            width: 100%
+            margin-top: 0
+            transition-delay: .2s
+        .top-wrapper
+            transition-delay: .2s
+            top: r(-36px)
+    .top-wrapper
+        height: r(36px)
+        background: #f68121
+        margin-bottom: 0
+        +flex-center()
+        +pos(abs, 0 null null 0)
+        width: 100%
+        +pad(null 1rem)
+        z-index: 33
+        +tran(.5s)
         p
-            +fz(.75rem)
+            text-align: center
+            +fz(.5rem)
+            letter-spacing: .1rem
+            +fw(600)
+            color: #fff
+        +media-breakpoint-up(lg)
+            p
+                +fz(.75rem)
+    .header-wrapper
+        +tran(.5s)
+        display: flex
+        justify-content: space-between
+        margin-top: r(36px)
+        
+        .dh-logo
+            img
+                width: 9rem
+                height: 9rem
+        .toggle-button
+            width: 9rem
+            height: 9rem
+            cursor: pointer
+            +flex-center()
+            .button
+                height: 1px
+                width: 35px
+                background: #fff
+                position: relative
+                transition: all 0ms .2s
+                &:after
+                    content: ""
+                    position: absolute
+                    left: 0
+                    width: 100%
+                    height: 100%
+                    bottom: 8px
+                    background: #fff
+                    transition: bottom .2s .2s cubic-bezier(0.23, 1, 0.32, 1), transform .2s cubic-bezier(0.23, 1, 0.32, 1)
+                &:before
+                    content: ""
+                    position: absolute
+                    left: 0
+                    width: 100%
+                    height: 100%
+                    top: 8px
+                    background: #fff
+                    transition: bottom .2s .2s cubic-bezier(0.23, 1, 0.32, 1), transform .2s cubic-bezier(0.23, 1, 0.32, 1)
+            &.active
+                .button
+                    background: transparent
+                    &:before
+                        top: 0
+                        transform: rotate(45deg)
+                        transition: top .2s cubic-bezier(0.23, 1, 0.32, 1), transform .2s .2s cubic-bezier(0.23, 1, 0.32, 1)
+                    &:after
+                        bottom: 0
+                        transform: rotate(-45deg)
+                        transition: bottom .2s cubic-bezier(0.23, 1, 0.32, 1), transform .2s .2s cubic-bezier(0.23, 1, 0.32, 1)
+    +media-breakpoint-down(md)
+        .header-wrapper
+            .dh-logo
+                img
+                    width: 6.5rem
+                    height: 6.5rem
+            .toggle-button
+                width: 6.5rem
+                height: 6.5rem
