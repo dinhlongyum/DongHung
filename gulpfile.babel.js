@@ -6,6 +6,7 @@ import sourcemap from 'gulp-sourcemaps'
 import clean from 'gulp-clean'
 import postcss from 'gulp-postcss'
 import autoprefixer from 'autoprefixer'
+import fiber from 'fibers'
 import debug from 'gulp-debug'
 import fs from 'graceful-fs'
 import minifierCSS from 'gulp-clean-css'
@@ -77,6 +78,7 @@ export const styles = () => src('./lib/*.sass')
     .pipe(plumber())
     .pipe(gulpif(!Prod, sourcemap.init({ loadMaps: true })))
     .pipe(sass({
+        fiber: fiber,
         outputStyle: 'expanded',
         precision: 10,
         includePaths: ['.']
