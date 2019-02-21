@@ -1,4 +1,6 @@
 .dh-slider
+    z-index: 0
+    position: relative
     .item, .background
         +flex-center()
         position: relative
@@ -135,7 +137,7 @@
             background: #fff
     .button
         width: 100%
-        text-align: center
+        text-align: left
         +tran(0)
         a, span
             display: inline-flex
@@ -180,7 +182,7 @@
                         transform: translate(-50%, -50%) scale(1)
                         transition-delay: .2s
                 
-    +media-breakpoint-down(lg)
+    +media-breakpoint-down(xl)
         .content
             .text
                 h2
@@ -200,6 +202,8 @@
                 text-align: center
                 h2
                     +fz(3rem)
+            .button
+                text-align: center
         .middle, .content
             width: 100%
             +mar(null 2rem)

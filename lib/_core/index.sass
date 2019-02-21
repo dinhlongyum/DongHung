@@ -1,15 +1,19 @@
 html, body
-	font-size: 16px
+	font-size: 14px
 	background: #fff
 	margin: 0
 	font-family: 'Bai Jamjuree', sans-serif
 	font-weight: 400
 	color: #333333
+	background: #f6f6f6
 	overflow: hidden
 	height: 100%
-	+media-breakpoint-up(xl)
+	+media-breakpoint-up(md)
+		+fz(r(16px))
+	@media screen and (min-width: 1500px)
 		+fz(20px)
 	.scroll-Animate
+		position: relative
 		height: 100%
 *::selection
 	background: #abcfc1
@@ -18,3 +22,9 @@ img
 	max-width: 100%
 p, h1, h2, h3, h4, h5, ul, figure
 	margin-bottom: 0
++media-breakpoint-up(lg)
+	.container
+		+pad(0)
+		max-width: 100%
+		width: calc(100% - 18rem)
+		+mar(null 9rem)

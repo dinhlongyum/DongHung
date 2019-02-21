@@ -12,11 +12,11 @@ html(lang="en")
 		title #{title}
 
 	body(class=bodyClass)
-		include ../../lib/custom/index.pug
 		block header
 		.scroll-Animate
 			main
 				block main
+				include ../../lib/custom/index.pug
 			block footer
 		#backToTop
 			em.mdi.mdi-chevron-up

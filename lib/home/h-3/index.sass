@@ -1,0 +1,15 @@
+.dh-home-3
+    position: relative
+    z-index: 3
+    +pad(r(30px) null)
+    +media-breakpoint-up(lg)
+        +pad(5.75rem null)
+    .img
+        position: relative
+        overflow: hidden
+        &:before
+            content: ""
+            display: block
+            padding-bottom: 56.25%
+    img
+        +pos(abs, null null 0 null)

@@ -1,76 +1,77 @@
 .grid
+    z-index: 0
     &.onScroll
-        .lineX
-            &:after
-                top: 9rem
-                transition-delay: .2s
-    .lineX
-        &:after
-            content: ''
-            z-index: 12
-            width: 100%
-            height: 1px
-            +pos(fixed,11.25rem null null 0)
-            background: hsla(0,0%,100%,.5)
-            +tran(.5s)
-        &:before
-            content: ''
-            width: 100%
-            z-index: 12
-            height: 1px
-            +pos(fixed,null null 4.5rem 0)
-            background: hsla(0,0%,100%,.5)
+        .line-t
+            top: 9rem
+            transition-delay: .2s
+    .line-t
+        content: ''
+        width: 100%
+        height: 1px
+        +pos(abs,11.25rem null null 0)
+        background: #b6b8b9
+        +tran(.5s)
+    .line-b
+        content: ''
+        width: 100%
+        height: 1px
+        +pos(abs,calc(100vh - 4.5rem) null null 0)
+        background: #b6b8b9
+    .line-r
+        content: ''
+        width: 1px
+        height: 100%
+        +pos(abs,0 9rem null null)
+        background: #b6b8b9
+    .line-l
+        content: ''
+        width: 1px
+        height: 100%
+        +pos(abs,0 null null 9rem)
+        background: #b6b8b9
+    .line-c
+        width: 1px
+        content: ''
+        height: 100%
+        +pos(abs,0 null null 50%)
+        transform: translateX(-50%)
+        background: #b6b8b9
     .lineY
-        &:after
-            content: ''
-            width: 1px
-            z-index: 12
-            height: 100vh
-            +pos(fixed,0 9rem null null)
-            background: hsla(0,0%,100%,.5)
-        &:before
-            content: ''
-            width: 1px
-            z-index: 12
-            height: 100vh
-            +pos(fixed,0 null null 9rem)
-            background: hsla(0,0%,100%,.5)
-    .lineCenter
-        &:after
-            width: 1px
-            z-index: 12
-            content: ''
-            height: 100vh
-            +pos(fixed,0 null null 50%)
-            transform: translateX(-50%)
-            background: hsla(0,0%,100%,.5)
+        +pos(abs, 0 null null 0)
+        width: 100%
+        height: 100vh
+        pointer-events: none
     +media-breakpoint-down(md)
         .lineX
-            &:after
+            .line-t
                 top: 8.75rem
         .lineY
-            &:after
+            .line-r
                 right: 6.5rem
-            &:before
+            .line-l
                 left: 6.5rem
     +media-breakpoint-down(sm)
-        .lineCenter
+        .line-c
             display: none
 .find-shop
-    +pos(fixed, 50% 2.5rem null null)
-    transform: translateY(-50%)
+    +pos(abs, 0 null null 0)
     z-index: 32
+    height: 100vh
+    width: 100%
     display: none
-    +pad(null 0 .1875rem)
+    pointer-events: none
     a
+        +pad(null 0 .1875rem)
+        pointer-events: all
         writing-mode: vertical-lr
         letter-spacing: .15em
         +fz(.875rem)
+        +pos(abs, 50% 3.75rem)
+        transform: translateY(-50%)
         text-transform: uppercase
         color: #ffffff
         overflow: hidden
         text-decoration: none
-        position: relative
         &:before
             content: ''
             height: 100%
@@ -79,10 +80,26 @@
             +pos(abs, null null 100% 0)
             +tran(.5s)
             background: #edd2bb
-        &:hover
+        &:after
+            content: ''
+            height: 100%
+            z-index: -1
+            width: 50%
+            +pos(abs, 100% null null  0)
+            +tran(.5s)
+            background: #edd2bb
+    &.inPage
+        a
+            color: #1e1f21
             &:before
+                transition-delay: .4s
                 bottom: 0
-    +media-breakpoint-up(sm)
+            &:hover
+                &:before
+                    transition-delay: 0s
+                    bottom: 100%
+                &:after
+                    top: 0
+                    transition-delay: .5s
+    +media-breakpoint-up(md)
         display: block
-    +media-breakpoint-up(lg)
-        right: 3.75rem
