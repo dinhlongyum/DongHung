@@ -24,9 +24,11 @@ p, h1, h2, h3, h4, h5, ul, figure
 	margin-bottom: 0
 .container
 	height: 100%
-+media-breakpoint-up(lg)
-	.container
+	+media-breakpoint-up(sm)
 		+pad(0)
 		max-width: 100%
+		width: calc(100% - 13rem)
+		+mar(null 6.5rem)
+	+media-breakpoint-up(lg)
 		width: calc(100% - 18rem)
 		+mar(null 9rem)

@@ -1,0 +1,121 @@
+.dh-footer
+    background: #1e1f21
+    padding-top: r(30px)
+    color: #fff
+    // .top-nav
+    //     display: flex
+        // height: 9rem
+    a
+        color: #fff
+        +fz(1.2rem)
+        +lh(1.6)
+    ul
+        list-style: none
+        padding-left: 0
+    .first-nav
+        ul
+            li
+                a
+                    font-size: 1.2rem
+    .last-nav
+        margin-bottom: 1rem
+        display: flex
+        align-items: center
+        .user, .language
+            +pad(null .5rem)
+            a
+                text-transform: uppercase
+        .language
+            padding-left: 0
+    .nav-list-active
+        margin-top: 1rem
+    .title
+        margin-bottom: 1rem
+        h5
+            text-transform: uppercase
+            letter-spacing: .15em
+            +fz(1.5rem)
+            +fw(400)
+    .bottom-nav
+        display: flex
+        align-items: center
+        height: 4.5rem
+        justify-content: space-between
+        font-size: 0.75rem
+    .newsletter
+        width: 100%
+        margin-top: 2.0625rem
+        .input
+            input
+                width: 100%
+                padding: .625rem
+                background-color: #161718
+                border: none
+                height: 3.5625rem
+    .hotline
+        margin-top: 2rem
+        .title
+            h4
+                +fz(1.2rem)
+                +fw(400)
+    +media-breakpoint-down(md)
+        .container
+            +pad(null 15px)
+    +media-breakpoint-up(sm)
+        .newsletter
+            .input
+                input
+                    max-width: 350px
+    +media-breakpoint-up(lg)
+        +pad(0)
+        height: 100vh
+        .top-nav
+            height: 9rem
+            display: flex
+            justify-content: space-between
+            align-items: center
+        .last-nav
+            padding-right: 20px
+            margin-bottom: 0
+            a
+                +fz(.5875rem)
+        .bottom-nav
+            +pad(null 2rem)
+        .first-nav
+            ul
+                display: flex
+                align-items: center
+                li
+                    a
+                        +pad(null 1.2vw)
+                        +fz(1rem)
+        .main-nav
+            +flex-center()
+            height: calc(100vh - 13.5rem)
+        .content
+            width: 100%
+            display: flex
+        .lg1-2
+            display: flex
+            flex: 0 0 50%
+            +pad(null .5rem)
+            align-items: center
+            justify-content: center
+            flex-wrap: wrap
+            position: relative
+            justify-content: flex-start
+            height: 100%
+        .nav-list-active
+            margin-top: 0
+        .title
+            h5
+                +fz(.9375rem)
+                text-transform: uppercase
+                letter-spacing: .15em
+                margin-bottom: .9375rem
+            ul
+                li
+                    a
+                        +fz(1.125rem)
+                        +lh(1.75)
+        
