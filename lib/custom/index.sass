@@ -4,10 +4,22 @@
         .line-t
             top: 9rem
             transition-delay: .2s
+        +media-breakpoint-down(md)
+            .line-t
+                top: 6.5rem
+    &.active
+        .line-t
+            top: 9rem
+            transition-delay: .2s
+        +media-breakpoint-down(md)
+            .line-t
+                top: 6.5rem
     .line-t
         content: ''
         width: 100%
+        z-index: 56
         height: 1px
+        opacity: .5
         +pos(abs,11.25rem null null 0)
         background: #b6b8b9
         +tran(.5s)
@@ -15,41 +27,48 @@
         content: ''
         width: 100%
         height: 1px
+        z-index: 56
+        opacity: .5
         +pos(abs,calc(100vh - 4.5rem) null null 0)
         background: #b6b8b9
     .line-r
         content: ''
         width: 1px
         height: 100%
+        z-index: 56
+        opacity: .5
         +pos(abs,0 9rem null null)
         background: #b6b8b9
     .line-l
         content: ''
         width: 1px
         height: 100%
+        z-index: 56
+        opacity: .5
         +pos(abs,0 null null 9rem)
         background: #b6b8b9
     .line-c
         width: 1px
         content: ''
         height: 100%
+        z-index: 56
+        opacity: .5
         +pos(abs,0 null null 50%)
         transform: translateX(-50%)
         background: #b6b8b9
     .lineY
+        z-index: 56
         +pos(abs, 0 null null 0)
         width: 100%
         height: 100vh
         pointer-events: none
     +media-breakpoint-down(md)
-        .lineX
-            .line-t
-                top: 8.75rem
-        .lineY
-            .line-r
-                right: 6.5rem
-            .line-l
-                left: 6.5rem
+        .line-t
+            top: 8.75rem
+        .line-r
+            right: 6.5rem
+        .line-l
+            left: 6.5rem
     +media-breakpoint-down(sm)
         .line-c
             display: none

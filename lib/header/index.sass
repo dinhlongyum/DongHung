@@ -4,14 +4,46 @@
     width: 100%
     z-index: 55
     &.onScroll
-        .header-wrapper
+        .main-wrapper
+            +pos(fixed, 0 null null 0)
+            width: 100%
+            margin-top: 0
+            transition: margin .5s ease-in-out
+            // transition-delay: .2s
+        .top-wrapper
+            // transition-delay: .2s
+            top: r(-36px)
+        .nav-wrapper
+            transform: translateY(-9rem)
+    &.inPage
+        .main-wrapper
+            .toggle-button
+                .button
+                    background: #1e1f21
+                    +tran(.3s)
+                    transition-delay: 0s
+                    &:after
+                        background: #1e1f21
+                        transition-delay: 0s
+                        +tran(.3s)
+                    &:before
+                        background: #1e1f21
+                        transition-delay: 0s
+                        +tran(.3s)
+    &.active
+        .top-wrapper
+            transition-delay: .2s
+            top: r(-36px)
+        .main-wrapper
+            transform: translateY(0)!important
             +pos(fixed, 0 null null 0)
             width: 100%
             margin-top: 0
             transition-delay: .2s
-        .top-wrapper
-            transition-delay: .2s
-            top: r(-36px)
+        .nav-wrapper
+            display: none
+        .header-wrapper
+            display: block
     .top-wrapper
         height: r(36px)
         background: #f68121
@@ -31,18 +63,22 @@
         +media-breakpoint-up(lg)
             p
                 +fz(.75rem)
-    .header-wrapper
-        +tran(.5s)
+    .main-wrapper
+        position: relative
+        z-index: 88
         display: flex
+        +tran(.5s)
+        pointer-events: none
         justify-content: space-between
         margin-top: r(36px)
-        
         .dh-logo
+            pointer-events: all
             img
                 width: 9rem
                 height: 9rem
         .toggle-button
             width: 9rem
+            pointer-events: all
             height: 9rem
             cursor: pointer
             +flex-center()
@@ -81,8 +117,56 @@
                         bottom: 0
                         transform: rotate(-45deg)
                         transition: bottom .2s cubic-bezier(0.23, 1, 0.32, 1), transform .2s .2s cubic-bezier(0.23, 1, 0.32, 1)
+    .nav-wrapper
+        +pos(abs, r(36px) 9rem null 9rem)
+        +tran(.75s)
+        z-index: 90
+        height: 9rem
+        display: flex
+        align-items: center
+        justify-content: flex-end
+        ul
+            display: flex
+            padding-left: 0
+            list-style: none
+            li
+                a
+                    display: inline-block
+                    +pad(null 1.2vw)
+                    text-decoration: none
+                    color: #fff
+                    +fz(1.125rem)
+        .last-nav
+            +pad(10px 2rem 6px null)
+            ul
+                li
+                    +flex-center()
+                    a
+                        +fz(.6875rem)
+                    &:not(:first-child)
+                        a
+                            +pad(0)
+    .top-nav
+        height: 9rem
+        display: flex
+        align-items: center
+        justify-content: space-between
+        .title
+            margin-left: 4.5rem
+            p
+                +lh(1.57143)
+                letter-spacing: .15em
+                +fz(1rem)
+                text-transform: uppercase
+    .header-wrapper
+        background: #3a3c44
+        +pos(fixed, 0 null null 0)
+        height: 100%
+        color: #fff
+        display: none
+        width: 100%
     +media-breakpoint-down(md)
-        .header-wrapper
+        .main-wrapper
             .dh-logo
                 img
                     width: 6.5rem
@@ -90,3 +174,5 @@
             .toggle-button
                 width: 6.5rem
                 height: 6.5rem
+        .nav-wrapper
+            display: none
