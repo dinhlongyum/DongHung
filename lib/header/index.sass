@@ -98,7 +98,7 @@
 			.button
 				height: 1px
 				width: 35px
-				background: #fff
+				background: #1e1f20
 				position: relative
 				transition: all 0ms .2s
 				&:after
@@ -108,7 +108,7 @@
 					width: 100%
 					height: 100%
 					bottom: 8px
-					background: #fff
+					background: #1e1f20
 					transition: bottom .2s .2s cubic-bezier(0.23, 1, 0.32, 1), transform .2s cubic-bezier(0.23, 1, 0.32, 1)
 				&:before
 					content: ""
@@ -117,7 +117,7 @@
 					width: 100%
 					height: 100%
 					top: 8px
-					background: #fff
+					background: #1e1f20
 					transition: bottom .2s .2s cubic-bezier(0.23, 1, 0.32, 1), transform .2s cubic-bezier(0.23, 1, 0.32, 1)
 			&.active
 				.button
@@ -147,7 +147,7 @@
 					display: inline-block
 					+pad(null 1.2vw)
 					text-decoration: none
-					color: #fff
+					color: #1e1f20
 					+fz(1.125rem)
 	.last-nav, .nav-list
 		+pad(10px 2rem 6px null)
@@ -160,6 +160,14 @@
 				color: #fff
 				text-transform: uppercase
 				+fz(.6875rem)
+	.nav-list
+		img
+			filter: brightness(0) invert(1)
+	.last-nav
+		img
+		.language, .user
+			a
+				color: #1e1f20
 	.top-nav
 		height: 9rem
 		display: flex
@@ -253,6 +261,7 @@
 	.nav-circle
 		height: 650px
 		width: 650px
+		pointer-events: none
 		transform: translateX(-50%)
 		position: absolute
 		border: 1px solid rgba(255, 255, 255, 0.5)
@@ -314,3 +323,26 @@
 			+animateActive()
 	.nav-list, .nav-list-active li, .main-nav-active li, .nav-text, .top-nav .title, .footer-nav p
 		+animate()
+.homepage
+	.dh-header .nav-wrapper ul li a
+		color: #fff
+	.dh-header .last-nav
+		a
+			color: #ffffff
+		img
+			filter: brightness(0) invert(1)
+	.dh-header .main-wrapper .toggle-button.active .button, .dh-header.inPage .main-wrapper .toggle-button.active .button
+		background: transparent
+	.dh-header .main-wrapper .toggle-button .button
+		background: #ffffff
+		&:after
+			background: #ffffff
+		&:before
+			background: #ffffff
+	.dh-header.inPage .main-wrapper .toggle-button .button
+		background: #1e1f21
+		&:after
+			background: #1e1f21
+		&:before
+			background: #1e1f21
+	.dh-header.inPage

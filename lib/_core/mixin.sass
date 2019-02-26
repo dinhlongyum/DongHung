@@ -70,3 +70,6 @@
 =animateActive()
 	opacity: 1
 	transform: translateY(0)
+@mixin breakpoint-up($breakpoint)
+	@media (min-width: $breakpoint) 
+		@content;

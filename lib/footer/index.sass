@@ -26,6 +26,8 @@
             +pad(null .5rem)
             a
                 text-transform: uppercase
+        img
+            filter: brightness(0) invert(1)
         .language
             padding-left: 0
     .nav-list-active
@@ -47,6 +49,9 @@
         width: 100%
         margin-top: 2.0625rem
         .input
+            display: flex
+            position: relative
+            align-items: center
             input
                 width: 100%
                 padding: .625rem
@@ -54,6 +59,16 @@
                 border: none
                 color: #fff
                 height: 3.5625rem
+            button
+                height: 100%
+                padding: .625rem
+                background: none
+                color: #fff
+                +pos(abs, 0 0 null null)
+                border: 0
+                height: 3.5625rem
+                width: 3.5625rem
+                font-size: 1.5rem
     .hotline
         margin-top: 2rem
         .title
@@ -127,8 +142,8 @@
     +media-breakpoint-up(sm)
         .newsletter
             .input
+                max-width: 350px
                 input
-                    max-width: 350px
     +media-breakpoint-up(lg)
         +pad(0)
         height: 100vh

@@ -21,7 +21,6 @@ import babel from 'gulp-babel'
 
 const argv = yargs.argv;
 const Prod = !!argv.production;
-const ccUrl = JSON.parse(fs.readFileSync('./concat.json'))
 
 
 export const watchCode = () => {
@@ -30,9 +29,7 @@ export const watchCode = () => {
     watch(['./img/**/*.{svg,gif,png,jpg,jpeg}', './img/*.{svg,gif,png,jpg,jpeg}'], series(images));
     watch(['./lib/**/*.js', './scripts/*.js', './scripts/**/*.js'], series(scripts));
     watch(['./fonts/**/*.{eot,svg,ttf,woff,woff2}', './fonts/*.{eot,svg,ttf,woff,woff2}'], series(fonts));
-    watch(['./concat.json'], parallel(cssCore, jsCore));
-    watch(['./fonts/**/*.{eot,svg,ttf,woff,woff2}', './fonts/*.{eot,svg,ttf,woff,woff2}'], series(fonts));
-    // watch('./dist').on('change', browserSync.reload)
+    watch(('./concat.json'), parallel(jsCore, cssCore));
 }
 
 export const server = () => {
@@ -56,7 +53,7 @@ export const cleanFiles = () => src('./dist', { read: false, allowEmpty: true })
         'showFiles': false
     }));
 // merge css
-export const cssCore = () => src(ccUrl.styles)
+export const cssCore = () => src(JSON.parse(fs.readFileSync('./concat.json')).styles)
     .pipe(concat('core.min.css'))
     .pipe(minifierCSS())
     .pipe(debug({
@@ -65,7 +62,7 @@ export const cssCore = () => src(ccUrl.styles)
     }))
     .pipe(dest('./dist/css/'));
 
-export const jsCore = () => src(ccUrl.scripts)
+export const jsCore = () => src(JSON.parse(fs.readFileSync('./concat.json')).scripts)
     .pipe(concat('core.min.js'))
     .pipe(minifierJS())
     .pipe(debug({

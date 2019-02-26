@@ -11,14 +11,14 @@ html(lang="en")
 		link(rel="stylesheet", href="./css/main.css")
 		title #{title}
 
-	body(class=bodyClass)
+	body(class=bodyclass)
 		.scroll-Animate
 			block header
 			main
 				block main
 				include ../../lib/custom/index.pug
 			block footer
-		#backToTop
-			em.mdi.mdi-chevron-up
+		//- #backToTop
+		//- 	em.mdi.mdi-chevron-up
 		script(src="./js/core.min.js")
 		script(src="./js/main.js")
