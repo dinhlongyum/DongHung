@@ -42,3 +42,17 @@ main
 .homepage
 	main
 		padding-top: 0
+.viewAll
+	a
+		+mar(null auto)
+		width: r(60px)
+		height: r(60px)
+		+bor-rad(50%)
+		+flex-center()
+		+fz(r(24px))
+		color: #1e1f20
+		border: 1px solid #d6d6d6
+	&.active
+		a
+			em
+				transform: rotate(180deg)

@@ -3,6 +3,7 @@
     z-index: 61
     .item
         background: #fff
+        margin-bottom: r(40px)
         h5
             +fz(r(24px))
             text-transform: uppercase
@@ -27,6 +28,11 @@
                 padding-top: r(25px)
             .img
                 padding-top: 0
+            &:nth-child(even)
+                .img
+                    order: 1
+                .content
+                    order: 2
     +media-breakpoint-up(lg)
         .item
-            +pad(50px 40px)
+            +pad(r(50px) r(40px))
