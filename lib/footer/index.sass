@@ -79,14 +79,14 @@
                 +fw(400)
         .button
             a
-                display: flex
+                background: #fff
+                display: inline-flex
                 .button-main
                     padding: 1.5625rem
                     font-size: 1.125rem
                     display: flex
                     justify-content: center
                     align-items: center
-                    background: #fff
                     color: #1e1f21
                 .button-circle
                     height: 100%
@@ -94,7 +94,7 @@
                     &:before
                         content: ''
                         width: 80%
-                        background: #fff
+                        background: #000
                         height: 80%
                         +bor-rad(50%)
                         +pos(abs, 50% null null 50%)
@@ -104,7 +104,7 @@
                         content: ''
                         width: 80%
                         height: 80%
-                        background: #000
+                        background: #fff
                         +bor-rad(50%)
                         +tran(.5s)
                         +pos(abs, 50% null null 50%)

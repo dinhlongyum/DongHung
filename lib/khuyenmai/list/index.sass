@@ -7,15 +7,10 @@
     .item
         background: #fff
         margin-bottom: r(40px)
-        box-shadow: 0 0 0 1px inset #d3d3d7
+        border: 1px solid #d3d3d7
+        border-top: 8px solid
         max-width: 400px
         +mar(null auto)
-        position: relative
-        &:after
-            content: ''
-            width: 100%
-            +pos(abs, 0 null null 0)
-            height: 8px
         .heading
             border-bottom: 1px solid #d3d3d7
             +pad(1rem 2rem)
@@ -61,6 +56,7 @@
                             width: 80%
                             height: 80%
                             +bor-rad(50%)
+                            background: #fff
                             +pos(abs, 50% null null 50%)
                             transform: translate(-50%,-50%) scale(0.2)
                             +tran(.5s)
@@ -68,64 +64,71 @@
                             content: ''
                             width: 80%
                             height: 80%
-                            background: #fff
                             +bor-rad(50%)
                             +tran(.5s)
                             +pos(abs, 50% null null 50%)
                             transform: translate(-50%,-50%) scale(0)
                     &:hover
                         .button-circle
-                            &:before
-                                transform: translate(-50%,-50%) scale(1)
                             &:after
                                 transform: translate(-50%,-50%) scale(.2)
+                            &:before
+                                transform: translate(-50%,-50%) scale(1)
                         &._gray
-                            .button-main
-                                background: darken(#d3d3d7, 20%)
+                            a
+                            background: darken(#d3d3d7, 20%)
                             .button-circle
-                                &:before
+                                &:after
                                     background: darken(#d3d3d7, 20%)
                         &._green
-                            .button-main
-                                background: darken(#97b1a7, 20%)
+                            a
+                            
+                            background: darken(#97b1a7, 20%)
                             .button-circle
-                                &:before
+                                &:after
                                     background: darken(#97b1a7, 20%)
                         &._yellow
-                            .button-main
-                                background: darken(#d9b99d, 20%)
+                            a
+                            
+                            background: darken(#d9b99d, 20%)
                             .button-circle
-                                &:before
+                                &:after
                                     background: darken(#d9b99d, 20%)
         &._gray
-            &:after
-                background: #d3d3d7
+            border-top-color: #d3d3d7
             .body
                 .button
-                    .button-main
+                    a
                         background: #d3d3d7
                     .button-circle
-                        &:before
+                        &:after
                             background: #d3d3d7
         &._green
-            &:after
-                background: #97b1a7
+            border-top-color: #97b1a7
             .body
                 .button
-                    .button-main
+                    a
                         background: #97b1a7
                     .button-circle
-                        &:before
+                        &:after
                             background: #97b1a7
         &._yellow
-            &:after
-                background: #d9b99d
+            border-top-color: #d9b99d
             .body
                 .button
-                    .button-main
+                    a
                         background: #d9b99d
                     .button-circle
-                        &:before
+                        &:after
                             background: #d9b99d
-        +media-breakpoint-up(lg)
+    +media-breakpoint-up(lg)
+        .item
             max-width: 100%
+            .body
+                .button
+                    a
+                        height: 4.6875rem
+                        .button-main
+                            width: calc(100% - 4.6875rem)
+                        .button-circle
+                            width: 4.6875rem

@@ -58,6 +58,7 @@
                             width: 80%
                             height: 80%
                             +bor-rad(50%)
+                            background: #fff
                             +pos(abs, 50% null null 50%)
                             transform: translate(-50%,-50%) scale(0.2)
                             +tran(.5s)
@@ -65,61 +66,62 @@
                             content: ''
                             width: 80%
                             height: 80%
-                            background: #fff
                             +bor-rad(50%)
                             +tran(.5s)
                             +pos(abs, 50% null null 50%)
                             transform: translate(-50%,-50%) scale(0)
                     &:hover
                         .button-circle
-                            &:before
-                                transform: translate(-50%,-50%) scale(1)
                             &:after
                                 transform: translate(-50%,-50%) scale(.2)
+                            &:before
+                                transform: translate(-50%,-50%) scale(1)
                         &._gray
-                            .button-main
-                                background: darken(#d3d3d7, 20%)
+                            a
+                            background: darken(#d3d3d7, 20%)
                             .button-circle
-                                &:before
+                                &:after
                                     background: darken(#d3d3d7, 20%)
                         &._green
-                            .button-main
-                                background: darken(#97b1a7, 20%)
+                            a
+                            
+                            background: darken(#97b1a7, 20%)
                             .button-circle
-                                &:before
+                                &:after
                                     background: darken(#97b1a7, 20%)
                         &._yellow
-                            .button-main
-                                background: darken(#d9b99d, 20%)
+                            a
+                            
+                            background: darken(#d9b99d, 20%)
                             .button-circle
-                                &:before
+                                &:after
                                     background: darken(#d9b99d, 20%)
         &._gray
             border-top-color: #d3d3d7
             .body
                 .button
-                    .button-main
+                    a
                         background: #d3d3d7
                     .button-circle
-                        &:before
+                        &:after
                             background: #d3d3d7
         &._green
             border-top-color: #97b1a7
             .body
                 .button
-                    .button-main
+                    a
                         background: #97b1a7
                     .button-circle
-                        &:before
+                        &:after
                             background: #97b1a7
         &._yellow
             border-top-color: #d9b99d
             .body
                 .button
-                    .button-main
+                    a
                         background: #d9b99d
                     .button-circle
-                        &:before
+                        &:after
                             background: #d9b99d
     +media-breakpoint-up(lg)
         +pad(5.75rem null)
